@@ -3,7 +3,7 @@ module ProductsHelper
 		if product.images.attached?
 			url_for(product.images.first)
 		else
-			"https://picsum.photos/id/#{rand(1..300)}/200/300/"
+			"https://picsum.photos/id/#{rand(1..300)}/300"
 		end
 	end
 end
