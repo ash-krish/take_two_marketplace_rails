@@ -16,4 +16,7 @@ module TakeTwoMarketplace
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
   end
+      ### The below config is to allow for multiple images to be uploaded
+    # As per https://stackoverflow.com/questions/58282845/rails-6-active-storage-could-not-find-or-build-blob-expected-attachable-got
+    # config.active_storage.replace_on_assign_to_many = false
 end
