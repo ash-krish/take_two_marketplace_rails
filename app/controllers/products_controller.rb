@@ -5,19 +5,20 @@ class ProductsController < ApplicationController
  
 
   # GET /products
-  # GET /products.json
   def index
     @products = Product.all
   end
 
   # GET /products/1
-  # GET /products/1.json
   def show
     @product = Product.find(params[:id])
   end
 
   def payment
+
   end
+
+
   # GET /products/new
   def new
     @product = Product.new
@@ -28,7 +29,6 @@ class ProductsController < ApplicationController
   end
 
   # POST /products
-  # POST /products.json
   def create
     @product = Product.new(product_params)
     @product.user_id = current_user.id

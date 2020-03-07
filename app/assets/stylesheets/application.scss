@@ -1,8 +1,40 @@
 
 @import 'bootstrap';
 
- img {
+footer { margin-top: 100px; }
+table, td, th { vertical-align: middle; border: none; }
+th { border-bottom: 1px solidr; }
+body { margin: 0; }
+
+
+
+img {
      display: block;
      width: 300px;
      height: auto;
  }
+
+ p {
+     color: darkolivegreen;
+     font-size: 20px;
+ }
+
+ h1 {
+    color:rgb(205, 29, 87);
+}
+.field{
+    color: green;
+   text-align:left;
+    font-size: large;
+    line-height: 25px;
+}
+
+th{
+    color: darkorchid;
+    font-size: 25px;
+}
+
+td{
+    color: darkolivegreen;
+    font-size: 20px;  
+}

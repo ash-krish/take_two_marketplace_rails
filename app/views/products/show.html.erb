@@ -41,9 +41,17 @@
   <%= @product.price %>
 </p>
 
-<% if current_user.id != @product.user_id  %>
-<button type="button" class="btn btn-primary">Buy now</button>
-
+<% if user_signed_in? && current_user.id != @product.user_id  %>
+<%= link_to 'Buy Now', payment_path%>
+<% else %>
+<% unless user_signed_in? && current_user.id = @product.user_id%>
+<%= link_to 'Buy Now', new_user_session_path %>
+<%# <% else %> 
+<%# <% if user_signed_in? && current_user.id != @product.user_id %> 
+<%# <% else %>
+<%# <% if user_logout? && current_user.id != @product.user_id  %> 
+<%# <button type="button" class="btn btn-primary">Buy now</button>  %>
+<% end %>
 <% end %>
 <br><br>
 
