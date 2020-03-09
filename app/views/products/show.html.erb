@@ -1,4 +1,4 @@
-
+<p id="notice"><%= notice %></p>
 <% if @product.images.attached? %>
 	 <% @product.images.each do |img| %>
 		<%= image_tag img %>
@@ -7,37 +7,37 @@
    <img src="https://picsum.photos/id/#{rand(1..300)}/200/300/"/>
  <% end %>
 <p>
-  <strong>Title:</strong>
+  <strong>Title:</strong><br>
   <%= @product.title %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Description:</strong><br>
   <%= @product.description %>
 </p>
 
 <p>
-  <strong>Colour:</strong>
+  <strong>Colour:</strong><br>
   <%= @product.colour %>
 </p>
 
 <p>
-  <strong>Size:</strong>
+  <strong>Size:</strong><br>
   <%= @product.size %>
 </p>
 
 <p>
-  <strong>Condition:</strong>
+  <strong>Condition:</strong><br>
   <%= @product.condition %>
 </p>
 
 <p>
-  <strong>Location:</strong>
+  <strong>Location:</strong><br>
   <%= @product.location %>
 </p>
 
 <p>
-  <strong>Price:</strong>
+  <strong>Price:</strong><br>
   <%= @product.price %>
 </p>
 
@@ -53,7 +53,8 @@
 <%# <button type="button" class="btn btn-primary">Buy now</button>  %>
 <% end %>
 <% end %>
+
 <br><br>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<%= link_to 'Edit this listing', edit_product_path(@product) %> | | |
+<%= link_to 'Back to all listings', products_path %>

@@ -9,57 +9,70 @@
       </ul>
     </div>
   <% end %>
-
+  
   <% if product.images.attached? %>
 	<% product.images.each do |img| %> 
 		<% image_tag img %> 
 	<% end %>
   	<% end %>
 
-  <div class="container">
+  <%# <div class="container"> %>
   <div class="field">
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
+  <br>
 
   <div class="field">
     <%= form.label :description %>
     <%= form.text_area :description %>
   </div>
+  <br>
 
   <div class="field">
     <%= form.label :colour %>
     <%= form.text_field :colour %>
   </div>
+  <br>
 
   <div class="field">
     <%= form.label :size %>
     <%= form.number_field :size %>
   </div>
+  <br>
+
 
   <div class="field">
     <%= form.label :condition %>
     <%= form.text_field :condition %>
   </div>
+   <br>
+
 
   <div class="field">
     <%= form.label :location %>
     <%= form.text_field :location %>
   </div>
+  <br>
+
 
   <div class="field">
     <%= form.label :price %>
     <%= form.text_field :price %>
   </div>
+  <br>
+
 
   <div class="field">
 		<%= form.label :images %>
 		<%= form.file_field :images, multiple: true %>
 	</div>
+  <br>
 
   <div class="actions">
    <%= form.submit %> 
   </div>
+  <br>
   
 <% end %>
 </div>

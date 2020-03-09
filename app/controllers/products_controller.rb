@@ -15,7 +15,6 @@ class ProductsController < ApplicationController
   end
 
   def payment
-
   end
 
 
@@ -26,47 +25,41 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
+    @product = Product.find(params[:id])
   end
 
   # POST /products
-  def create
+   def create
     @product = Product.new(product_params)
-    @product.user_id = current_user.id
+    @product.user = current_user
 
-    respond_to do |format|
-      if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
-        format.json { render :show, status: :created, location: @product }
-      else
-        format.html { render :new }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
-      end
+    if @product.save
+      redirect_to @product, notice:"Your listing was successfully created"
+    else
+      render 'new'
     end
   end
 
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
   def update
-    respond_to do |format|
-      if @product.update(product_params)
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
-        format.json { render :show, status: :ok, location: @product }
-      else
-        format.html { render :edit }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
-      end
+    @product = Product.find(params[:id])
+  
+    if @product.update(product_params)
+      redirect_to @product
+    else
+      render 'edit'
     end
   end
 
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
-    @product.destroy
-    respond_to do |format|
-      format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
-      format.json { head :no_content }
+    product = Product.find(params[:id])
+    product.destroy
+    
+    redirect_to products_path
     end
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

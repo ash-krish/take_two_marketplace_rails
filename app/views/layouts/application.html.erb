@@ -17,13 +17,16 @@
     <a class="navbar-brand" href="/products/new">Create new listing</a>
     <a class="navbar-brand" href="/users/sign_in">Log in</a>
     <a class="navbar-brand" href="/users/sign_up">Sign up</a>
+    <% if user_signed_in? %>
+    <a class="navbar-brand" href="/products">Logout</a>
+    <% end %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="/products/new">Create new listing</a>
+          <%# <a class="nav-link" href="/products/new">Create new listing</a> %>
         </li>
       </ul>
     </div>
@@ -34,10 +37,10 @@
 <% if user_signed_in? %>
   Logged in as <strong><%= current_user.email %></strong>.
   <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+   <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+ <% else %> 
+<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+ <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
 <% end %>
 </p>
 <div class="container">
