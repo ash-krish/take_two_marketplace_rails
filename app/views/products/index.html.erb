@@ -34,40 +34,17 @@
         <td><%= product.price %></td>
         <td><%= image_tag product_image_url(product) %></td>
         <td><%= link_to 'View more details', product %></td>
-        <% if user_signed_in? && product.user_id == current_user.id %>
+        <%# <td><%= button_to "Add #{product.title} to cart", line_items_path(:product_id => product.id) %>
+        
+         <% if user_signed_in? && product.user_id == current_user.id %>
         <td><%= link_to 'Edit listing', edit_product_path(product) %></td>
         <td><%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
+
+        
       <% end %>
       </tr>
     <% end %>
-   
+     
   </tbody>
 </table>
-
-<br>
-
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-
-<div class="card" style="width: 18rem;">
-  <img src="bg.jpg" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div><div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-

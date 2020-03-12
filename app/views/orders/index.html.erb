@@ -1,0 +1,14 @@
+<h2>All Orders</h2>
+
+
+<% @orders.each do |order| %>
+  <p>Name: <%= order.name %></p>
+  <p>Email: <%= order.email %></p>
+  <p>Line Items: <% order.line_items.each do |item| %>
+    <%= item.product.title %>
+    <% end %></p>
+  <ul>
+    
+  </ul>
+<% end %>
+<%= link_to 'Back to all listings', products_path %>

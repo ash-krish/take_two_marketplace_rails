@@ -1,0 +1,20 @@
+<h3> We need your details for processing the order.<br> Please fill the form </h3>
+
+<%= form_for(@order) do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name, required: true, autofocus: true %>
+  </p>
+  <p>
+    <%= f.label :email %><br>
+    <%= f.email_field :email %>
+  </p>
+  <p>
+    <%= f.label :address %><br>
+    <%= f.text_area :address %>
+  </p>
+  <p>
+    <%= f.submit %> 
+  </p>
+<% end %>
+<%= link_to 'Changed your mind? Back to all listings', products_path %>
