@@ -1,4 +1,11 @@
 <p id="notice"><%= notice %></p>
+
+<br>
+<p>
+  <strong>Title:</strong><br>
+  <%= @product.title %>
+</p>
+
 <% if @product.images.attached? %>
 	 <% @product.images.each do |img| %>
 		<%= image_tag img %>
@@ -6,10 +13,7 @@
   <% else %> 
    <img src="https://picsum.photos/id/#{rand(1..300)}/200/300/"/>
  <% end %>
-<p>
-  <strong>Title:</strong><br>
-  <%= @product.title %>
-</p>
+<br>
 
 <p>
   <strong>Description:</strong><br>
@@ -49,7 +53,7 @@
 <% unless user_signed_in? && current_user.id = @product.user_id%>
 <%# <%= button_to "Add #{product.title} to cart", line_items_path(:product_id => product.id) %>  
 <%= button_to "Add #{@product.title} to cart", new_user_session_path %>
-<%# <%= link_to 'Bu', new_user_session_path %> 
+<%# <%= link_to 'Buy', new_user_session_path %> 
 <%# <% else %> 
 <%# <% if user_signed_in? && current_user.id != @product.user_id %> 
 <%# <% else %>
