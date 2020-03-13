@@ -4,7 +4,7 @@
 <h1>All clothing</h1>
 <br>
 <% if user_signed_in? %>
-<%= link_to 'Create your listing', new_product_path %>
+<%= link_to 'Create new listing', new_product_path %>
 <% end %>
 <table>
   <thead>
@@ -33,7 +33,7 @@
         <td><%= product.location %></td>
         <td><%= product.price %></td>
         <td><%= image_tag product_image_url(product) %></td>
-        <td><%= link_to 'View more details', product %></td>
+        <td><%= link_to 'View more details', product_path(product) %></td>
         <%# <td><%= button_to "Add #{product.title} to cart", line_items_path(:product_id => product.id) %>
         
          <% if user_signed_in? && product.user_id == current_user.id %>

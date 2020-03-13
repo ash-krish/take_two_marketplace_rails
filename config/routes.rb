@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'orders/show'
   get 'orders/new'
 
+  # get 'products/:id' => 'products#show', as: "product"
+
   
   get "carts/:id" => "carts#show", as: "cart"
   delete "carts/:id" => "carts#destroy"
